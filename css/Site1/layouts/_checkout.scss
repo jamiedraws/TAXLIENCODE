@@ -1,0 +1,83 @@
+$select: ".checkout" !default;
+
+// config
+@use "./../config/colors";
+@use "./../config/fonts";
+@use "./../config/queries";
+
+// abstracts
+@use "Shared/scss/templates/base/abstracts/group";
+@use "Shared/scss/templates/base/abstracts/space";
+
+@mixin base {
+    $space: 1rem;
+
+    #{$select} {
+        font-family: fonts.get(base);
+
+        &__group {
+            @include group.contain-flex($gap: $space) {
+            }
+        }
+
+        &__take-all {
+            flex-basis: 100%;
+        }
+
+        &__take-some {
+            flex-grow: 1;
+            flex-basis: 23rem;
+        }
+
+        &__copy {
+            @include space.between-flow-elements(1rem);
+        }
+
+        &__action {
+            margin-top: 2rem;
+
+            display: flex;
+            justify-content: center;
+        }
+
+        &__paypal {
+            flex: 1 1 auto;
+        }
+
+        &__action-text {
+            text-align: center;
+        }
+
+        &__ssl > img {
+            margin: auto;
+        }
+
+        &__prev-action {
+            order: 1;
+        }
+
+        &__next-action {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            position: sticky;
+            bottom: 0;
+        }
+
+        &__actions {
+            @include group.contain-flex($gap: 1rem) {
+                flex-grow: 1;
+            }
+            flex-direction: column;
+
+            padding-block: 2rem 1rem;
+            box-shadow: inset 0 -5em 1em white;
+
+            justify-content: center;
+            text-align: center;
+        }
+
+        @content;
+    }
+}

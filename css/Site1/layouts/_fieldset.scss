@@ -1,0 +1,89 @@
+$select: ".fieldset" !default;
+
+// config
+@use "./../config/colors";
+@use "./../config/fonts";
+@use "./../config/queries";
+
+// abstracts
+@use "Shared/scss/templates/base/abstracts/group";
+@use "Shared/scss/templates/base/abstracts/space";
+@use "Shared/scss/templates/base/abstracts/background";
+
+$size: 0.5rem;
+
+@mixin base {
+    #{$select} {
+        &__group {
+            @include group.contain-flex($size);
+            @include group.flexchild(1 1 12em);
+        }
+
+        &__group > &__group {
+            margin: 0;
+        }
+
+        &__take-all {
+            flex-basis: 100%;
+        }
+
+        &__title {
+            padding: 0.5em;
+            @include background.color-map(
+                $background-color: #c4c4c4,
+                $text-color: colors.get(primary)
+            );
+            border-bottom: 1px solid;
+
+            font-size: fonts.em(25);
+            font-weight: normal;
+
+            > b {
+                font-weight: bold;
+            }
+        }
+
+        &__headline {
+            text-transform: uppercase;
+            font-size: fonts.em(18);
+        }
+
+        &__content {
+            @include space.between-flow-elements;
+        }
+
+        @content;
+    }
+}
+
+@mixin frame {
+    #{$select} {
+        $space: 0.5rem;
+
+        &--frame {
+            outline: 1px solid;
+            padding: #{$space};
+
+            width: calc(100% - 2px);
+            margin-inline: auto;
+
+            #{$select} {
+                &__container {
+                    padding: #{$size};
+                }
+
+                &__title {
+                    margin: -#{$space} -#{$space} #{$space};
+                }
+
+                &__line-break {
+                    border-bottom: 1px solid #ccc;
+                    padding-bottom: 1.5rem;
+                    margin-bottom: 0.75rem;
+                }
+            }
+
+            @content;
+        }
+    }
+}

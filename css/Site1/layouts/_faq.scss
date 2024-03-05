@@ -1,0 +1,56 @@
+$select: ".faq" !default;
+
+// config
+@use "./../config/colors";
+@use "./../config/queries";
+@use "./../config/fonts";
+
+// abstracts
+@use "Shared/scss/templates/base/abstracts/group";
+@use "Shared/scss/templates/base/abstracts/background";
+@use "Shared/scss/templates/base/abstracts/space";
+@use "./../abstracts/button";
+
+@mixin base {
+    #{$select} {
+        --section-frame: 1rem 1rem 3rem;
+
+        &__header {
+            text-align: center;
+
+            @include fonts.base-em(25);
+
+            padding-block: 2rem;
+
+            a {
+                font-size: fonts.cascade-em(16);
+            }
+        }
+
+        &__title {
+            text-transform: uppercase;
+            font-family: fonts.get(primary);
+            font-size: clamp(fonts.cascade-em(40), 3.5vw, fonts.cascade-em(55));
+        }
+
+        &__footer {
+            text-align: center;
+
+            padding-block: 2rem;
+
+            @include button.for-row;
+        }
+
+        @media all and (max-width: queries.section-container(900)) {
+            &__header {
+                font-size: clamp(0.5em, 3.25vw, 1.5em);
+
+                a {
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        @content;
+    }
+}

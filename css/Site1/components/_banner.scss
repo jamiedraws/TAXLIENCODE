@@ -1,0 +1,28 @@
+$select: ".banner" !default;
+
+// config
+@use "./../config/colors";
+@use "./../config/fonts";
+@use "./../config/queries";
+
+
+@mixin base {
+
+    #{$select} {
+        flex-basis: 100%;
+        font: 800 fonts.em(16) / 1 fonts.get(base);
+        background: colors.get(accent);
+        color: colors.get(primary);
+        text-transform: uppercase;
+        text-align: center;
+        padding: 1em 0;
+        margin: 0;
+
+        @media all and (max-width: queries.get(document-mobile-portrait)) {
+            padding: 1em 0.5em;
+            font-size: clamp(0.25em, 2.75vw, 1em);
+        }
+
+        @content;
+    }
+}

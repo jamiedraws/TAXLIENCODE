@@ -1,0 +1,30 @@
+$select: ".section" !default;
+
+// config
+@use "./../config/colors";
+@use "./../config/fonts";
+@use "./../config/queries";
+
+// utils
+@use "Shared/scss/templates/base/utils/section" with (
+    $container: queries.get(section-max),
+    $frame: 1rem
+);
+
+@mixin base {
+    @include section.base {
+        &__frame {
+            padding: #{section.$frame};
+        }
+
+        &__block {
+            margin: var(--section-block, 2rem 0);
+        }
+    }
+
+    #{$select} {
+        --section-offset: 0.1px;
+
+        @content;
+    }
+}

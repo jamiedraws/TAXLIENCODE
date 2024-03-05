@@ -1,0 +1,80 @@
+$select: ".info" !default;
+
+// config
+@use "./../config/colors";
+@use "./../config/queries";
+@use "./../config/fonts";
+
+// abstracts
+@use "Shared/scss/templates/base/abstracts/group";
+@use "Shared/scss/templates/base/abstracts/background";
+@use "Shared/scss/templates/base/abstracts/space";
+@use "./../abstracts/button";
+
+@mixin base {
+    #{$select} {
+        --section-frame: 4rem 1rem;
+
+        text-align: center;
+        line-height: 1.45;
+
+        @include fonts.base-em(20);
+
+        hr {
+            width: 100%;
+            margin-block: 4rem 1rem;
+        }
+
+        picture + b {
+           
+        }
+
+        p + &__callout {
+            margin-top: 0;
+        }
+
+        &__title {
+            @include fonts.base-rem(25);
+            line-height: 1.25;
+
+        }
+
+        &__desc {
+            
+                font-size: fonts.cascade-em(20);
+        }
+
+        &__callout {
+
+            text-transform: uppercase;
+            color: var(--color-second);
+
+            display: block;
+        }
+
+        &__text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            @include space.between-flow-elements($gap: 2rem) {
+            }
+        }
+
+        &__button {
+            @include button.for-row;
+        }
+
+        @media all and (max-width: queries.section-container(1035)) {
+            font-size: clamp(0.75em, 3.5vw, 1.2em);
+
+            &__title {
+                max-width: 33ch;
+
+                font-size: 1.3em;
+            }
+        }
+
+        @content;
+    }
+}

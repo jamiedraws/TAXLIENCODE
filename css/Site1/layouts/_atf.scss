@@ -1,0 +1,170 @@
+$select: ".atf" !default;
+
+@use "./../config/colors";
+@use "./../config/fonts";
+@use "./../config/queries";
+
+// abstracts
+@use "Shared/scss/templates/base/abstracts/group";
+@use "Shared/scss/templates/base/abstracts/list";
+@use "Shared/scss/templates/base/abstracts/space";
+@use "./../abstracts/text-arrow";
+
+@mixin base {
+    #{$select} {
+        --section-frame: 1rem 1rem 2rem;
+
+        text-align: left;
+
+        img[width="161"] {
+            max-width: queries.em(161);
+        }
+
+        img[width="164"] {
+            max-width: queries.em(164);
+        }
+
+        img[width="138"] {
+            max-width: queries.em(138);
+        }
+
+        &__group {
+            @include group.contain-flex($gap: 2rem) {
+            }
+        }
+
+        &__header {
+            flex: 0 1 100%;
+            border-bottom: 2px solid colors.get(gray);
+
+            @include fonts.base-em(25);
+            font-weight: bold;
+            line-height: 1.2;
+
+            text-align: center;
+
+            padding-block: 1.5rem;
+        }
+
+        &__title {
+            font-family: fonts.get(primary);
+            font-size: fonts.cascade-em(65);
+            text-transform: uppercase;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        &__image {
+            background: colors.get(placeholder);
+        }
+
+        &__quote {
+            font-family: fonts.get(base);
+            text-align: center;
+            font-size: fonts.em(30);
+            font-weight: 500;
+            line-height: 1.33;
+            font-style: italic;
+            color: colors.get(primary);
+            padding: 1em 0.5em;
+            border-top: 2px solid colors.get(gray);
+            border-bottom: 2px solid colors.get(gray);
+            flex: 0 1 100%;
+            margin: 1em 0;
+        }
+
+        &__image {
+            border: 8px double colors.get(gray);
+        }
+
+        &__feature-logos {
+            @include group.contain-flex($gap: 0.5rem) {
+            }
+
+            align-items: center;
+            max-width: queries.em(570);
+            width: 100%;
+
+            --text-arrow-background-color: var(--color-first);
+            --text-arrow-text-color: black;
+
+            > b {
+                text-transform: uppercase;
+                font-size: fonts.em(20);
+
+                @include text-arrow.base;
+            }
+        }
+
+        & &__feature-logos {
+            margin-inline: auto;
+        }
+
+        &__headline {
+            font-size: clamp(fonts.em(21), 3vw, fonts.em(30));
+            font-weight: bold;
+            line-height: 1.1;
+            text-transform: uppercase;
+        }
+
+        &__list {
+            font-size: clamp(fonts.em(14), 2.25vw, fonts.em(20));
+            margin-left: 0;
+            margin-bottom: 2rem;
+        }
+
+        &__details {
+            font-size: fonts.em(20);
+        }
+
+        &__text {
+            @include space.between-flow-elements($gap: 1.5rem) {
+            }
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media all and (max-width: queries.section-container()) {
+            &__header {
+                font-size: clamp(0.85em, 1vw, 2em);
+            }
+
+            &__title {
+                max-width: 26ch;
+                margin-inline: auto;
+            }
+
+            &__headline,
+            &__list,
+            &__details,
+            hr {
+                order: -1;
+            }
+
+            &__details {
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media all and (max-width: queries.section-container(730)) {
+            &__feature-logos {
+                font-size: 2.5vw;
+            }
+        }
+
+        @media all and (min-width: queries.get(nav)) {
+            &__form {
+                flex: 0 1 500px;
+                order: 3;
+            }
+
+            &__text {
+                flex: 0 1 570px;
+                order: 2;
+            }
+        }
+
+        @content;
+    }
+}

@@ -1,0 +1,118 @@
+// utils
+@use "Shared/scss/templates/base/utils/scope";
+@use "Shared/scss/templates/base/utils/content-reveal";
+@use "./../utils/contain";
+@use "./../utils/element-controller";
+@use "./../utils/disclosure";
+@use "./../utils/color";
+
+// components
+@use "./../components/button";
+@use "./../components/list";
+@use "./../components/offer";
+@use "./../components/payment";
+@use "./../components/fp-nav";
+@use "./../components/features-benefits";
+@use "./../components/figure-picture-text";
+@use "./../components/banner";
+@use "./../components/bonus-text-product";
+@use "./../components/card";
+@use "./../components/location-badge";
+@use "./../components/social";
+
+// layouts
+@use "./../layouts/content";
+@use "./../layouts/atf";
+@use "./../layouts/main-offer";
+@use "./../layouts/accordion";
+@use "./../layouts/slide";
+@use "./../layouts/day-card";
+@use "./../layouts/learn";
+@use "./../layouts/about";
+@use "./../layouts/info";
+@use "./../layouts/review";
+@use "./../layouts/faq";
+@use "./../layouts/text-picture";
+
+@mixin base {
+    // utils
+    @include content-reveal.base;
+
+    // components
+    @include scope.for-template {
+        @include button.base;
+        @include button.circular;
+    }
+
+    @include list.base;
+    @include list.check;
+    @include list.check-fill;
+
+    @content;
+}
+
+@mixin index {
+    // utils
+    @include contain.base;
+    @include element-controller.base;
+    @include disclosure.base;
+    @include color.accent; // just to highlight orange text throughout page
+
+    // components
+    @include offer.base;
+    @include payment.base;
+    @include fp-nav.base;
+    @include features-benefits.base;
+    @include figure-picture-text.base;
+    @include banner.base;
+    @include bonus-text-product.base;
+    @include location-badge.base;
+
+    // layouts
+    @include atf.base;
+    @include slide.base;
+    @include main-offer.base;
+    @include main-offer.container;
+    @include main-offer.offer-product;
+    @include main-offer.benefits;
+
+    @include content.picture-text;
+    @include content.in-use;
+    @include content.text-video;
+    @include content.communities;
+    @include content.customer-reviews;
+    @include content.founder;
+    @include content.info;
+
+    @include learn.base;
+    @include about.base;
+    @include info.base;
+    @include review.base;
+    @include faq.base;
+    @include text-picture.base;
+
+    @content;
+}
+
+@mixin faq {
+    // components
+    @include card.base;
+
+    // layouts
+    @include accordion.base;
+
+    @content;
+}
+
+@mixin confirmation {
+    // utils
+
+    // components
+    @include social.profiles;
+    @include social.share;
+
+    // layouts
+    @include day-card.base;
+
+    @include content.confirmation;
+}

@@ -1,0 +1,86 @@
+$select: ".list" !default;
+
+// config
+@use "./../config/colors";
+
+// abstracts
+@use "Shared/scss/templates/base/abstracts/list";
+
+@mixin base {
+    #{$select} {
+        @include list.structure;
+
+        &--stack {
+            @include list.circle($size: 0.5em, $color: colors.get(primary));
+        }
+
+        @content;
+    }
+}
+
+@mixin check {
+    $bulletSize: 1.5;
+
+    #{$select} {
+        &--check {
+            margin-left: #{$bulletSize + 0.5}em;
+
+            #{$select} {
+            }
+
+            li {
+                position: relative;
+                gap: 0.6rem;
+                align-items: center;
+
+                &::before {
+                    content: "";
+                    background: url(/images/Site1/checkmark.svg);
+                    background-size: 100% 100%;
+                    flex-basis: #{$bulletSize}em;
+                    flex-shrink: 0;
+                    align-self: flex-start;
+
+                    width: #{$bulletSize}em;
+                    height: #{$bulletSize}em;
+                }
+            }
+
+            @content;
+        }
+    }
+}
+
+@mixin check-fill {
+    $bulletSize: 1.5;
+
+    #{$select} {
+        &--check-fill {
+            margin-left: #{$bulletSize + 0.5}em;
+            font-weight: bold;
+
+            #{$select} {
+            }
+
+            li {
+                position: relative;
+                gap: 0.6rem;
+                align-items: center;
+
+                &::before {
+                    content: "";
+                    background: url(/images/Site1/checkmark-fill.svg);
+                    background-size: 100% 100%;
+                    flex-basis: #{$bulletSize}em;
+                    flex-shrink: 0;
+                    align-self: flex-start;
+
+                    width: #{$bulletSize}em;
+                    height: #{$bulletSize}em;
+                }
+            }
+
+            @content;
+        }
+    }
+}

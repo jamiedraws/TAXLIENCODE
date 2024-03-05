@@ -1,0 +1,46 @@
+$select: ".root-links" !default;
+
+// config
+@use "./../config/colors";
+@use "./../config/fonts";
+@use "./../config/queries";
+
+@mixin base {
+    #{$select} {
+        &__item {
+            display: flex;
+            flex-direction: column;
+
+            padding-bottom: 1rem;
+
+            &:not(:last-child) {
+                border-bottom: 2px solid #ccc;
+                margin-bottom: 1rem;
+            }
+        }
+
+        &__link {
+            font-size: fonts.em(30);
+            font-family: fonts.get(primary);
+            text-transform: uppercase;
+            text-decoration: none;
+
+            color: var(--color-second);
+        }
+
+        &__spots-count {
+            font-style: italic;
+        }
+
+        &__next-event-header {
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        &__earliest-event {
+            font-style: italic;
+        }
+
+        @content;
+    }
+}

@@ -1,0 +1,17 @@
+$select: ".event-address" !default;
+
+// config
+@use "./../config/colors";
+@use "./../config/fonts";
+
+@mixin base {
+    #{$select} {
+        display: inline-block;
+        box-shadow: 0 0 0.25em hsl(0, 0, 20%);
+        background: red;
+        padding: 1em;
+        clip-path: polygon(30% 0%, 100% 0, 100% 70%, 70% 100%, 0 100%, 0% 30%);
+
+        @content;
+    }
+}

@@ -1,0 +1,83 @@
+// utils
+@use "Shared/scss/templates/base/utils/scope";
+@use "Shared/scss/templates/base/utils/svg-icon";
+
+// components
+@use "Shared/scss/templates/base/components/toast";
+@use "./../components/social";
+@use "./../components/validation-summary-errors" as vse;
+@use "./../components/validate";
+@use "./../components/order-table";
+@use "./../components/offer-details";
+@use "./../components/form";
+@use "./../components/payment";
+@use "./../components/status-screen";
+@use "./../components/guidebook-box";
+
+// layouts
+@use "./../layouts/order";
+@use "./../layouts/modal-dialog";
+@use "./../layouts/express-checkout";
+@use "./../layouts/checkout";
+@use "./../layouts/fieldset";
+@use "./../layouts/radio-group";
+@use "./../layouts/root-links";
+
+@mixin order-form {
+    // utils
+    @include scope.for-template {
+        @include order-table.base;
+    }
+
+    @include svg-icon.base;
+    @include svg-icon.combobox;
+
+    // components
+    @include toast.base;
+    @include toast.polite;
+
+    @include social.base;
+    @include social.autofill;
+    @include validate.base;
+    @include validate.checkbox;
+    @include vse.base;
+
+    @include form.base;
+    @include form.field-icon;
+    @include form.field-label;
+    @include form.select;
+    @include form.checkbox;
+    @include form.radio;
+    @include form.inline-combobox-label;
+    @include form.cvv;
+
+    @include payment.form;
+
+    @include offer-details.base;
+
+    @include status-screen.initialize;
+
+    @include guidebook-box.base;
+
+    // layouts
+    @include order.base;
+    @include order.responsive;
+    @include modal-dialog.base;
+    @include modal-dialog.terms;
+    @include modal-dialog.privacy;
+
+    @include checkout.base;
+    @include fieldset.base;
+    @include fieldset.frame;
+    @include radio-group.base;
+
+    @include scope.for-mobile {
+        @include order.responsive;
+    }
+
+    @include scope.for-template {
+        @include express-checkout.base;
+    }
+
+    @include root-links.base;
+}

@@ -1,0 +1,31 @@
+// abstracts
+@use "Shared/scss/templates/base/abstracts/background";
+
+@mixin base {
+    padding: 0.5em;
+
+    @include background.color-map(
+        $background-color: var(--text-arrow-background-color, black),
+        $text-color: var(--text-arrow-text-color, white)
+    ) {
+    }
+
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: calc(-1.25em * 2);
+        border-style: solid;
+        border-width: 1.25em;
+        border-left-color: var(--text-arrow-background-color, black);
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+        border-right-color: transparent;
+        transform: translate(-3%, -2%);
+    }
+
+    @content;
+}

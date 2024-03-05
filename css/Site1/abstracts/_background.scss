@@ -1,0 +1,15 @@
+@forward "Shared/scss/templates/base/abstracts/background";
+
+@mixin pattern {
+    position: relative;
+    background: var(--section-background-color, var(--color-first));
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+
+        background: url(/images/Site1/bg-pattern.svg) repeat;
+        opacity: 0.15;
+    }
+}

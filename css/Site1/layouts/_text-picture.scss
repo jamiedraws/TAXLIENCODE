@@ -1,0 +1,48 @@
+$select: ".text-picture" !default;
+
+// config
+@use "./../config/fonts";
+@use "./../config/colors";
+@use "./../config/queries";
+
+// abstracts
+@use "Shared/scss/templates/base/abstracts/group";
+@use "Shared/scss/templates/base/abstracts/background";
+@use "Shared/scss/templates/base/abstracts/space";
+
+@mixin base {
+    #{$select} {
+        @include background.color-map(
+            $background-color: var(--color-third),
+            $text-color: white
+        ) {
+            padding-block: 2rem;
+        }
+
+        @include fonts.base-em(20);
+
+        &__group {
+            @include group.contain-flex($gap: 2rem) {
+            }
+
+            justify-content: center;
+        }
+
+        &__picture {
+            flex-basis: queries.cascade-em(325);
+        }
+
+        &__title {
+            font-size: fonts.cascade-em(25);
+        }
+
+        &__text {
+            flex-basis: 38em;
+
+            @include space.between-flow-elements($gap: 1rem) {
+            }
+        }
+
+        @content;
+    }
+}

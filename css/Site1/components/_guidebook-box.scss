@@ -1,0 +1,26 @@
+$select: ".guidebook-box" !default;
+
+// config
+@use "./../config/colors";
+@use "./../config/queries";
+@use "./../config/fonts";
+
+// abstracts
+@use "Shared/scss/templates/base/abstracts/background";
+
+@mixin base {
+    #{$select} {
+        @include background.color-map(
+            $background-color: var(--color-second),
+            $text-color: white
+        ) {
+        }
+
+        font-size: clamp(fonts.em(15), 3.5vw, fonts.em(20));
+        text-transform: uppercase;
+        text-align: center;
+        padding: 1rem;
+
+        @content;
+    }
+}

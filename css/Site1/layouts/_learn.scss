@@ -1,0 +1,115 @@
+$select: ".learn" !default;
+
+// config
+@use "./../config/colors";
+@use "./../config/queries";
+@use "./../config/fonts";
+
+// abstracts
+@use "Shared/scss/templates/base/abstracts/group";
+@use "./../abstracts/background";
+@use "Shared/scss/templates/base/abstracts/space";
+
+@mixin base {
+    #{$select} {
+        --section-frame: 2rem 1rem 6rem;
+
+        text-align: center;
+
+        @include background.color-map(
+            $background-color: var(--color-first),
+            $text-color: var(--color-third)
+        ) {
+        }
+
+        @include background.pattern;
+
+            img[width="168"] {
+                    max-width: queries.em(168);
+            }
+
+        img[width="94"] {
+            max-width: queries.em(94);
+        }
+
+        img[width="89"] {
+            max-width: queries.em(89);
+        }
+
+        @include background.image-container() {
+        }
+
+        &__bg {
+            @include background.image-background;
+        }
+
+        &__group {
+            @include group.contain-flex($gap: 2em) {
+            }
+
+            justify-content: space-evenly;
+        }
+
+        &__header {
+            flex-basis: 100%;
+        }
+
+        &__title {
+            font-size: clamp(fonts.em(45), 2vw, fonts.em(55));
+            text-transform: uppercase;
+            font-family: fonts.get(primary);
+        }
+
+        &__figure {
+            flex-basis: queries.em(340);
+
+            padding: 2.5em 1em;
+
+            @include background.color-map(
+                $background-color: var(--main-background-color),
+                $text-color: var(--main-text-color)
+            ) {
+                box-shadow: 0 0 0.5em black;
+            }
+
+            @include space.between-flow-elements($gap: 1rem) {
+            }
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &:nth-of-type(2) p {
+                max-width: 15em;
+                margin-inline: auto;
+            }
+        }
+
+        &__figcaption {
+            @include fonts.base-em(18);
+
+            > h3 {
+                font-size: fonts.cascade-em(25);
+                text-transform: uppercase;
+            }
+        }
+
+        @media all and (max-width: queries.section-container()) {
+            &__group {
+                justify-content: center;
+            }
+        }
+
+        @media all and (max-width: queries.section-container(900)) {
+            --section-frame: 1rem 1rem 2rem;
+
+            font-size: clamp(0.5em, 2vw, 1em);
+
+            &__header {
+                // font-size: clamp(0.5em, 1vw, queries.em(41));
+            }
+        }
+
+        @content;
+    }
+}

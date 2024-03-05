@@ -1,0 +1,22 @@
+$select: ".color" !default;
+
+// config
+@use "./../config/colors";
+
+@mixin base {
+    #{$select} {
+        @each $name, $color in colors.$list {
+            &-#{"" + $name} {
+                color: #{$color};
+            }
+        }
+
+        @content;
+    }
+}
+
+@mixin accent {
+    .accent {
+        color: var(--color-second);
+    }
+}

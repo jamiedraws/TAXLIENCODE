@@ -1,0 +1,33 @@
+$select: ".accordion" !default;
+
+// layouts
+@use "Shared/scss/templates/base/layouts/accordion";
+
+// abstracts
+@use "./../abstracts/plus-minus-icon";
+
+@mixin base {
+    @include accordion.base;
+
+    #{$select} {
+        &__button {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &__icon {
+            @include plus-minus-icon.icon;
+        }
+
+        &__button[aria-expanded="false"] > &__icon {
+            @include plus-minus-icon.plus;
+        }
+
+        &__button[aria-expanded="true"] > &__icon {
+            @include plus-minus-icon.minus;
+        }
+
+        @content;
+    }
+}

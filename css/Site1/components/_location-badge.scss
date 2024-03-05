@@ -1,0 +1,74 @@
+$select: ".location-badge" !default;
+
+// config
+@use "./../config/colors";
+@use "./../config/fonts";
+@use "./../config/queries";
+
+// abstracts
+@use "Shared/scss/templates/base/abstracts/background";
+
+@mixin base {
+    #{$select} {
+        display: flex;
+
+        @include background.color-map(
+            $background-color: var(--color-first),
+            $text-color: var(--main-text-color)
+        ) {
+        }
+
+        font-family: fonts.get(primary);
+        overflow: hidden;
+        line-height: 1.2;
+        text-align: left;
+        text-transform: uppercase;
+
+        &__title {
+            font-size: fonts.em(16);
+            font-weight: 600;
+            font-family: fonts.get(base);
+        }
+
+        &__location {
+            font-family: fonts.get(primary);
+            font-size: fonts.em(30);
+            font-weight: bold;
+                line-height: 1;
+        }
+
+        &__icon {
+            @include background.color-map(
+                $background-color: var(--main-text-color),
+                $text-color: var(--color-first)
+            ) {
+            }
+
+                
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 0 1 queries.em(80);
+            
+
+            svg {
+                    font-size: 2em;
+                fill: currentColor;
+                stroke: currentColor;
+                overflow: visible;
+                height: 1.3em;
+            }
+        }
+
+        &__text {
+            padding: 1em;
+        }
+
+        address {
+            font-style: normal;
+        }
+
+        @content;
+    }
+}

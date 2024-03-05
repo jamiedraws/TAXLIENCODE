@@ -1,0 +1,69 @@
+@use "sass:map";
+
+$list: (
+    base: #444444,
+    base-light: white,
+    base-dark: black,
+    primary-light: #cbe2ff,
+    primary: #132028,
+    primary-dark: #06183e,
+    primary-mid: #113976,
+    accent: #94aaab,
+    accent-dark: #d1430f,
+    accent-light: #f57e52,
+    callout: #3ba612,
+    gray: #cccccc,
+    placeholder: #444444
+);
+
+@mixin scope {
+    // configure main color theme
+    --main-text-color: #000000;
+    --main-background-color: white;
+
+    // configure color palette theme
+    /*
+    variable naming convention: --color-<ordinal-number>-<letter>
+    ordinal-number: represents a different color hue
+    letter: represents a different shade of the <ordinal-number> color hue
+    */
+    --color-first: #94aaab;
+
+    --color-second: #c26349;
+
+    --color-third: #132028;
+
+    // header color theme
+    // --header-background-color: green;
+    // --header-text-color: white;
+
+    // nav color theme
+    --nav-text-color: var(--color-second-a);
+    --nav-background-color: white;
+    --nav-link-background-color: #edecec;
+
+    // footer color theme
+    // --footer-background-color: red;
+    // --footer-text-color: black;
+
+    // button color theme
+    --button-background-color: var(--color-second);
+    --button-background-color-rollover: var(--main-background-color);
+    --button-text-color: var(--main-background-color);
+    --button-text-color-rollover: var(--button-background-color);
+    --button-border-color: var(--button-background-color);
+    --button-border-color-rollover: var(--button-border-color);
+
+    // features benefits color theme
+    // --features-benefits-background-color: red;
+    // --features-benefits-text-color: blue;
+    // --features-benefits-list-bullet-color: yellow;
+
+    // ribbon banner color theme
+    // --banner-background-color: black;
+    // --banner-text-color: green;
+}
+
+@function get($name) {
+    @return map.get($list, $name);
+}

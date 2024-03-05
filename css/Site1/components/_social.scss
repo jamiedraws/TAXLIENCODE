@@ -1,0 +1,91 @@
+@use "sass:map";
+
+$select: ".social" !default;
+
+// components
+@use "Shared/scss/templates/base/components/social" as internal;
+@forward "Shared/scss/templates/base/components/social";
+
+@mixin profiles {
+    #{$select} {
+        &--profiles {
+            #{$select} {
+                &__group {
+                    justify-content: center;
+                    gap: 1rem;
+                }
+
+                &__item {
+                    flex-grow: 0;
+                    flex-basis: auto;
+                }
+
+                &__icon {
+                    font-size: 2em;
+                }
+
+                &__facebook {
+                    color: map.get(internal.$colors, facebook);
+                }
+
+                &__twitter {
+                    color: map.get(internal.$colors, twitter);
+                }
+
+                &__youtube {
+                    color: map.get(internal.$colors, youtube);
+                }
+
+                &__instagram {
+                    color: map.get(internal.$colors, instagram);
+                }
+            }
+
+            @content;
+        }
+    }
+}
+
+@mixin autofill {
+    @include internal.autofill;
+
+    #{$select} {
+        &--autofill {
+            #{$select} {
+                &__item {
+                    position: relative;
+
+                    &[aria-disabled="true"] {
+                        pointer-events: none;
+                    }
+                }
+
+                &__icon {
+                    pointer-events: none;
+                }
+
+                &__button-mask {
+                    position: absolute;
+                    opacity: 0;
+                }
+            }
+
+            @content;
+        }
+    }
+}
+
+@mixin share {
+    #{$select} {
+        &--share {
+            max-width: 30em;
+            margin-left: auto;
+            margin-right: auto;
+
+            #{$select} {
+            }
+
+            @content;
+        }
+    }
+}

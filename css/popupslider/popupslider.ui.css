@@ -1,0 +1,492 @@
+/* League Gothic */
+@font-face {
+  font-family: "League Gothic";
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: condensed;
+  unicode-range: U+000D-2212;
+  src: url(/shared/webfonts/league_gothic/League_Gothic-webfont.woff)
+      format("woff");
+}
+
+/* Keyframe Animations */
+@-webkit-keyframes edgescope {
+  from {
+      stroke-width: 2;
+      stroke-dasharray: 50%, 5000%;
+      stroke-dashoffset: 50%;
+  }
+  to {
+      fill: none;
+      stroke: #f1f1f1;
+      stroke-width: 3;
+      stroke-dasharray: 422, 0;
+      -webkit-transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+      transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+}
+
+@-moz-keyframes edgescope {
+  from {
+      stroke-width: 2;
+      stroke-dasharray: 50%, 5000%;
+      stroke-dashoffset: 50%;
+  }
+  to {
+      fill: none;
+      stroke: #f1f1f1;
+      stroke-width: 3;
+      stroke-dasharray: 422, 0;
+      -moz-transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+      transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+}
+
+@-o-keyframes edgescope {
+  from {
+      stroke-width: 2;
+      stroke-dasharray: 50%, 5000%;
+      stroke-dashoffset: 50%;
+  }
+  to {
+      fill: none;
+      stroke: #f1f1f1;
+      stroke-width: 3;
+      stroke-dasharray: 422, 0;
+      -o-transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+      transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+}
+
+@keyframes edgescope {
+  from {
+      stroke-width: 2;
+      stroke-dasharray: 50%, 5000%;
+      stroke-dashoffset: 50%;
+  }
+  to {
+      fill: none;
+      stroke: #f1f1f1;
+      stroke-width: 3;
+      stroke-dasharray: 422, 0;
+      transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+      transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+}
+
+@-webkit-keyframes BounceUp {
+  from {
+      background: #f1f1f1;
+      -webkit-transform: scaleY(0);
+      -webkit-transform-origin: 50% 100%;
+  }
+  to {
+      background: #f1f1f1;
+      color: #7030a0;
+      -webkit-transform: scaleY(1);
+  }
+}
+
+@-moz-keyframes BounceUp {
+  from {
+      background: #f1f1f1;
+      -moz-transform: scaleY(0);
+      -moz-transform-origin: 50% 100%;
+  }
+  to {
+      background: #f1f1f1;
+      color: #7030a0;
+      -moz-transform: scaleY(1);
+  }
+}
+
+@-o-keyframes BounceUp {
+  from {
+      background: #f1f1f1;
+      -o-transform: scaleY(0);
+      -o-transform-origin: 50% 100%;
+  }
+  to {
+      background: #f1f1f1;
+      color: #7030a0;
+      -o-transform: scaleY(1);
+  }
+}
+
+@keyframes BounceUp {
+  from {
+      background: #f1f1f1;
+      transform: scaleY(0);
+      transform-origin: 50% 100%;
+  }
+  to {
+      background: #f1f1f1;
+      color: #7030a0;
+      transform: scaleY(1);
+  }
+}
+
+@-webkit-keyframes ChangeColor {
+  from {
+      color: transparent;
+  }
+  to {
+      color: white;
+  }
+}
+
+@-moz-keyframes ChangeColor {
+  from {
+      color: transparent;
+  }
+  to {
+      color: white;
+  }
+}
+
+@-o-keyframes ChangeColor {
+  from {
+      color: transparent;
+  }
+  to {
+      color: white;
+  }
+}
+
+@keyframes ChangeColor {
+  from {
+      color: transparent;
+  }
+  to {
+      color: white;
+  }
+}
+
+@-webkit-keyframes SlideLeft {
+  from {
+      -webkit-transform: translate3d(90px, 0, 0);
+  }
+  to {
+      -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+
+@-moz-keyframes SlideLeft {
+  from {
+      -moz-transform: translate3d(90px, 0, 0);
+  }
+  to {
+      -moz-transform: translate3d(0, 0, 0);
+  }
+}
+
+@-o-keyframes SlideLeft {
+  from {
+      -o-transform: translate3d(90px, 0, 0);
+  }
+  to {
+      -o-transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes SlideLeft {
+  from {
+      transform: translate3d(90px, 0, 0);
+  }
+  to {
+      transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes SlideUp {
+  from {
+      -webkit-transform: translate3d(0, 70px, 0);
+  }
+  to {
+      -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+
+@-moz-keyframes SlideUp {
+  from {
+      -moz-transform: translate3d(0, 70px, 0);
+  }
+  to {
+      -moz-transform: translate3d(0, 0, 0);
+  }
+}
+
+@-o-keyframes SlideUp {
+  from {
+      -o-transform: translate3d(0, 70px, 0);
+  }
+  to {
+      -o-transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes SlideUp {
+  from {
+      transform: translate3d(0, 70px, 0);
+  }
+  to {
+      transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes FadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@-moz-keyframes FadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@-o-keyframes FadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes FadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+/* default */
+.njs-custom .notifyjs-container {
+  border: none;
+}
+
+/* Keyframe animations & transitions */
+.cssanimations .edgescope rect,
+.cssanimations.njs-default .notifyjs-container rect {
+  -webkit-animation: edgescope 1.5s forwards;
+  -moz-animation: edgescope 1.5s forwards;
+  animation: edgescope 1.5s forwards;
+}
+
+.csstransforms .bounce--up,
+.cssanimations.njs-default .notifyjs-container {
+  display: inline-block;
+  vertical-align: middle;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition-property: color;
+  -moz-transition-property: color;
+  -o-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+
+  -webkit-animation: ChangeColor 0.5s ease 1.5s forwards;
+  -moz-animation: ChangeColor 0.5s ease 1.5s forwards;
+  animation: ChangeColor 0.5s ease 1.5s forwards;
+}
+
+.cssanimations .bounce--up:before,
+.cssanimations.njs-default .notifyjs-container:before {
+  display: block;
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  background: #f1f1f1;
+  /*
+  -webkit-animation: BounceUp 0.5s cubic-bezier(0.52, 1.64, 0.37, 0.66) 1.5s forwards;
+     -moz-animation: BounceUp 0.5s cubic-bezier(0.52, 1.64, 0.37, 0.66) 1.5s forwards;
+      animation: BounceUp 0.5s cubic-bezier(0.52, 1.64, 0.37, 0.66) 1.5s forwards;
+      */
+}
+
+/* Transition */
+.fx-anim {
+  box-sizing: inherit;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.6s;
+  -moz-transition-duration: 0.6s;
+  -o-transition-duration: 0.6s;
+  transition-duration: 0.6s;
+  -webkit-transition-timing-function: ease;
+  -moz-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  transition-timing-function: ease;
+}
+
+.fx--slide--drop > span {
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+
+  opacity: 1;
+}
+
+/* Notify Js theme */
+.notifyjs-metro-base {
+  display: table;
+  position: relative;
+  min-height: 52px;
+  color: #444;
+}
+
+.cssanimations .notifyjs-metro-base {
+  background: transparent;
+  border: none;
+}
+
+.notifyjs-container .notifyjs-metro-base .notifyjs-title {
+  color: #0c255d;
+  /* font-weight: normal; */
+}
+
+.notifyjs-container .notifyjs-metro-base .notifyjs-cta {
+  font-family: "League Gothic", Helvetica, sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 21px;
+  padding: 8px;
+  width: 80px;
+  line-height: 1;
+  text-align: center;
+  color: transparent;
+  -webkit-animation: ChangeColor 0.5s ease 1s forwards;
+  -moz-animation: ChangeColor 0.5s ease 1s forwards;
+  animation: ChangeColor 0.5s ease 1s forwards;
+}
+
+.notifyjs-svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.notifyjs-metro-base .notifyjs-image {
+  display: table;
+  position: absolute;
+  height: auto;
+  width: auto;
+  left: 25px;
+  top: 50%;
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.notifyjs-metro-base .notifyjs-text-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: left;
+  margin: 10px 5px 10px 10px;
+  clear: both;
+  font-family: montserrat, Helvetica, sans-serif;
+}
+
+.cssanimations .notifyjs-metro-base .notifyjs-text-wrapper {
+  opacity: 0;
+  -webkit-animation: FadeIn 0.5s ease forwards;
+  -moz-animation: FadeIn 0.5s ease forwards;
+  animation: FadeIn 0.5s ease forwards;
+}
+
+.notifyjs-metro-base .notifyjs-title {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.notifyjs-metro-base .notifyjs-text {
+  font-size: 12px;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+.notifyjs-metro-base .notifyjs-text-wrapper--content {
+  padding: 1em;
+}
+
+.notifyjs-metro-base .notifyjs-text-wrapper--cta {
+  background-color: #f15922;
+}
+
+.njs-default .notifyjs-corner .notifyjs-container {
+  width: 380px;
+}
+
+.notifyjs-container .notifyjs-cta {
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  word-wrap: break-word;
+  padding: 8px;
+}
+
+.yellow-highlight {
+  -webkit-box-shadow: 0 0 25px rgba(228, 196, 0, 0.8);
+  -moz-box-shadow: 0 0 25px rgba(228, 196, 0, 0.8);
+  box-shadow: 0 0 25px rgba(228, 196, 0, 0.8);
+}
+
+/* Tablet / Mobile View */
+@media screen and (max-width: 1720px) {
+  .njs-default .notifyjs-corner,
+  .njs-default .notifyjs-corner .notifyjs-wrapper,
+  .njs-default .notifyjs-corner .notifyjs-container {
+      margin: 0;
+      width: 100%;
+  }
+
+  .njs-default .notifyjs-corner .notifyjs-container {
+      width: 100%;
+  }
+
+  .njs-default .notifyjs-metro-base {
+      margin: auto;
+      position: static;
+  }
+
+  .njs-default .notifyjs-svg {
+      left: 0;
+      right: 0;
+      margin: auto;
+  }
+}
